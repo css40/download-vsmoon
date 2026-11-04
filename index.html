@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>vsMOON · el editor con Mr. Pixel para estudiantes</title>
+  <meta name="description" content="vsMOON es un editor de código hecho por un estudiante, para estudiantes. Con Mr. Pixel como compañero, racha de estudio, pomodoro, niveles y logros. Versión 1.9.1 beta educativa.">
+  <meta name="theme-color" content="#1c1d21">
+  <link rel="icon" href="img/mrpixel/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ============================================================ NAV -->
+  <header class="nav" id="nav">
+    <a class="logo" href="#inicio" aria-label="vsMOON, inicio">
+      <img class="logo__img" src="img/mrpixel/favicon.png" alt="" width="30" height="30" data-opcional>
+      <span class="logo__txt">vs<b>MOON</b></span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav__links" id="navLinks">
+      <a href="#mrpixel">Mr. Pixel</a>
+      <a href="#estudio">Racha y estudio</a>
+      <a href="#funciones">Funciones</a>
+      <a href="#instalacion">Instalación</a>
+      <a href="#dev">Desarrollador</a>
+      <a class="btn btn--mini" href="#descargar">Descargar</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============================================================ HERO -->
+    <section class="hero" id="inicio">
+      <div class="wrap hero__grid">
+        <div class="hero__texto">
+          <p class="chip chip--version"><span class="punto"></span> Versión <span data-version>1.9.1</span> · <span data-canal>beta educativa</span></p>
+          <h1>Programar se siente mejor con <span class="resalta">VsMoon</span> al lado.</h1>
+          <p class="hero__sub">vsMOON es un editor de código hecho <strong>por un estudiante, para estudiantes</strong>. Te explica los errores en español, celebra cuando todo compila y te ayuda a estudiar todos los días.</p>
+
+          <div class="hero__cta" id="descargar">
+            <a class="btn btn--grande" href="downloads/vsMOON-1.9.1-beta.exe" data-descarga-windows download>
+              <span class="btn__icono">⬇</span>
+              <span class="btn__txt"><b>Descargar para Windows</b><small>v<span data-version>1.9.1</span> beta educativa</small></span>
+            </a>
+            <button class="btn btn--grande btn--apagado" type="button" id="btnLinux" aria-disabled="true">
+              <span class="btn__icono">🐧</span>
+              <span class="btn__txt"><b>Linux</b><small>Próximamente</small></span>
+            </button>
+          </div>
+          <ul class="hero__datos">
+            <li>🔥 Racha de estudio</li>
+            <li>🍅 Pomodoro</li>
+            <li>🏆 Niveles y logros</li>
+          </ul>
+        </div>
+
+        <div class="hero__mascota">
+          <div class="globo" id="globoPixel" role="status" aria-live="polite">
+            <span id="globoTexto">¡Hola! Soy Mr. Pixel 👋</span>
+          </div>
+          <!-- IMAGEN 1 · Mr. Pixel grande del hero -->
+          <figure class="slot slot--hero">
+            <img src="img/mrpixel/hero-saludando.png" alt="Mr. Pixel saludando"
+                 data-pose="Mr. Pixel de cuerpo completo, saludando con una mano y sonriendo, mirando al frente. PNG con fondo transparente, lo más grande posible (800×800).">
+          </figure>
+          <div class="plataforma" aria-hidden="true"></div>
+        </div>
+      </div>
+      <a class="bajar" href="#mrpixel" aria-label="Seguir bajando">↓</a>
+    </section>
+
+    <!-- ============================================================ MR PIXEL -->
+    <section class="seccion" id="mrpixel">
+      <div class="wrap">
+        <header class="seccion__cab">
+          <p class="etiqueta">Tu compañero</p>
+          <h2>Conoce a Mr. Pixel</h2>
+          <p class="seccion__sub">Aparece en una esquina mientras programas y reacciona a lo que haces. Sin molestar: tú decides cuándo está y cuándo no.</p>
+        </header>
+
+        <div class="pixel-grid">
+          <article class="estado estado--feliz reveal">
+            <!-- IMAGEN 2 -->
+            <figure class="slot slot--estado">
+              <img src="img/mrpixel/feliz.png" alt="Mr. Pixel celebrando"
+                   data-pose="Celebrando con los dos brazos arriba, boca abierta de alegría, ojos cerrados de felicidad. Confeti de pixeles alrededor. (400×400, fondo transparente)">
+            </figure>
+            <h3>Celebra contigo</h3>
+            <p>Compilas sin errores y lanza confeti de pixeles. También festeja cada logro y cada subida de nivel.</p>
+            <span class="burbuja">“¡Compiló sin errores! 🎉”</span>
+          </article>
+
+          <article class="estado estado--animo reveal">
+            <!-- IMAGEN 3 -->
+            <figure class="slot slot--estado">
+              <img src="img/mrpixel/animo.png" alt="Mr. Pixel animando"
+                   data-pose="Con el puño cerrado frente al pecho, cejas decididas y una sonrisa de medio lado, guiñando un ojo. Cara de “tú puedes”. (400×400, fondo transparente)">
+            </figure>
+            <h3>Te anima cuando te trabas</h3>
+            <p>¿Varios errores seguidos? Te recuerda respirar, leer el mensaje con calma y usar la tarjeta de ayuda.</p>
+            <span class="burbuja">“Tranquilo, los errores son parte de aprender.”</span>
+          </article>
+
+          <article class="estado estado--descanso reveal">
+            <!-- IMAGEN 4 -->
+            <figure class="slot slot--estado">
+              <img src="img/mrpixel/descanso.png" alt="Mr. Pixel descansando"
+                   data-pose="Sentado relajado con una taza de café humeante entre las manos, ojos entrecerrados y tranquilos, quizás estirando un brazo. (400×400, fondo transparente)">
+            </figure>
+            <h3>Te manda a descansar</h3>
+            <p>Si llevas mucho rato seguido, te avisa que es hora de estirar las piernas y tomar agua.</p>
+            <span class="burbuja">“Descansa, te lo ganaste. ☕”</span>
+          </article>
+
+          <article class="estado estado--foco reveal">
+            <!-- IMAGEN 5 -->
+            <figure class="slot slot--estado">
+              <img src="img/mrpixel/concentrado.png" alt="Mr. Pixel concentrado"
+                   data-pose="Con audífonos puestos frente a una laptop pequeña, mirada fija en la pantalla, ceño ligeramente fruncido, muy concentrado. (400×400, fondo transparente)">
+            </figure>
+            <h3>Se concentra contigo</h3>
+            <p>Cuando arrancas un pomodoro de foco, Mr. Pixel se pone en modo estudio y se mueve suavemente mientras corre el tiempo.</p>
+            <span class="burbuja">“¡A concentrarse! Un pomodoro a la vez 💪”</span>
+          </article>
+        </div>
+
+        <p class="nota-centro">¿No lo quieres a un lado? Se apaga desde el menú con <b>“Mr. Pixel compañero”</b>.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================ ESTUDIO / RACHA -->
+    <section class="seccion seccion--oscura" id="estudio">
+      <div class="wrap">
+        <header class="seccion__cab">
+          <p class="etiqueta etiqueta--naranja">Estudiar todos los días</p>
+          <h2>Tu <span class="resalta resalta--fuego">racha</span>, tu foco, tu nivel</h2>
+          <p class="seccion__sub">Programar es práctica. vsMOON cuenta el tiempo que de verdad estás escribiendo código y te ayuda a no perder el hilo.</p>
+        </header>
+
+        <div class="estudio-grid">
+          <div class="estudio-info">
+            <!-- RACHA -->
+            <div class="racha reveal">
+              <div class="racha__cab">
+                <!-- IMAGEN 6 -->
+                <figure class="slot slot--mini">
+                  <img src="img/mrpixel/racha.png" alt="Mr. Pixel con una llama"
+                       data-pose="Orgulloso, sosteniendo una llama de pixeles en la mano (o con fuego pixelado detrás), con una sonrisa segura. (300×300, fondo transparente)">
+                </figure>
+                <div>
+                  <h3><span class="fuego">🔥</span> Racha de estudio</h3>
+                  <p>Practica un día tras otro y no rompas la cadena. Si hoy todavía no practicaste, la racha de ayer sigue viva.</p>
+                </div>
+              </div>
+              <div class="racha__dias" id="rachaDias" aria-label="Ejemplo de siete días de racha">
+                <button type="button" class="dia" data-d="L"><span>L</span></button>
+                <button type="button" class="dia" data-d="M"><span>M</span></button>
+                <button type="button" class="dia" data-d="X"><span>X</span></button>
+                <button type="button" class="dia" data-d="J"><span>J</span></button>
+                <button type="button" class="dia" data-d="V"><span>V</span></button>
+                <button type="button" class="dia" data-d="S"><span>S</span></button>
+                <button type="button" class="dia" data-d="D"><span>D</span></button>
+              </div>
+              <p class="racha__pie"><b id="rachaNum">0</b> días de racha <small>(toca los días, es una demo)</small></p>
+            </div>
+
+            <ul class="lista-iconos">
+              <li class="reveal"><span>🍅</span><div><b>Pomodoro integrado</b><p>Foco y descanso con un anillo de progreso. Tú eliges los minutos.</p></div></li>
+              <li class="reveal"><span>📊</span><div><b>Tus estadísticas</b><p>Minutos de hoy, los últimos 7 días y tiempo por lenguaje. El tiempo solo cuenta cuando de verdad estás practicando.</p></div></li>
+              <li class="reveal"><span>⭐</span><div><b>Niveles</b><p>Sube de <i>Novato</i> a <i>Leyenda</i> con tu práctica. Cada minuto, ejecución y error corregido suma experiencia.</p></div></li>
+              <li class="reveal"><span>🏅</span><div><b>15 logros</b><p>Insignias de bronce, plata y oro: “Primer programa”, “7 días de racha”, “100 errores corregidos”…</p></div></li>
+            </ul>
+          </div>
+
+          <div class="estudio-captura reveal">
+            <div class="ventana">
+              <div class="ventana__barra"><i></i><i></i><i></i><span>Estudio · Pomodoro y estadísticas</span></div>
+              <!-- CAPTURA · Ventana de estudio (ya incluida; reemplázala por tu captura real si quieres) -->
+              <img src="img/capturas/estudio-pomodoro.png" alt="Ventana de estudio de vsMOON con pomodoro, racha, gráfica semanal y logros"
+                   data-pose="Captura de la ventana “Pomodoro y estadísticas” con el sticker de Mr. Pixel.">
+            </div>
+            <div class="niveles">
+              <span class="insignia insignia--bronce">Bronce</span>
+              <span class="insignia insignia--plata">Plata</span>
+              <span class="insignia insignia--oro">Oro</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ FUNCIONES -->
+    <section class="seccion" id="funciones">
+      <div class="wrap">
+        <header class="seccion__cab">
+          <p class="etiqueta etiqueta--verde">Cosas útiles</p>
+          <h2>Hecho para aprender, no para estorbar</h2>
+          <p class="seccion__sub">Menos configuración, más práctica. Esto es lo que vas a usar todos los días.</p>
+        </header>
+
+        <div class="funciones">
+          <article class="func reveal"><span class="func__ico">🇪🇸</span><h3>Errores en español</h3><p>Los errores te los explica en tu idioma, con una tarjeta de ayuda en <i>Problemas</i> y corrección automática cuando se puede.</p></article>
+          <article class="func reveal"><span class="func__ico">🐞</span><h3>Depurar paso a paso</h3><p>Avanza línea por línea y mira cómo cambian tus variables con el <b>Inspector de variables</b>.</p></article>
+          <article class="func reveal"><span class="func__ico">⚡</span><h3>Vista previa en vivo</h3><p>Escribe una página web y mira el resultado al instante con <b>Pixel Server Preview</b>.</p></article>
+          <article class="func reveal"><span class="func__ico">🧭</span><h3>Estructura de código</h3><p>Un mapa de tu archivo para saltar a cualquier función o clase sin perderte.</p></article>
+          <article class="func reveal"><span class="func__ico">🌈</span><h3>Código fácil de leer</h3><p>Resaltado de colores, guías de sangría arcoíris, llaves emparejadas y autocompletado por palabras.</p></article>
+          <article class="func reveal"><span class="func__ico">📚</span><h3>Glosario técnico</h3><p>¿Qué significa tal término? Búscalo y, si quieres, inserta el código de ejemplo directo en tu archivo.</p></article>
+          <article class="func reveal"><span class="func__ico">🧩</span><h3>Plantillas</h3><p>Empieza un archivo nuevo desde una plantilla y escribe tu primer programa en segundos.</p></article>
+          <article class="func reveal"><span class="func__ico">🔢</span><h3>Tabla de verdad</h3><p>Genera la tabla de verdad de tus expresiones lógicas. Ideal para lógica y circuitos.</p></article>
+          <article class="func reveal"><span class="func__ico">🎤</span><h3>Modo presentación</h3><p>Letra grande y pantalla limpia para exponer tu código en clase.</p></article>
+          <article class="func reveal"><span class="func__ico">📄</span><h3>Exporta y comparte</h3><p>Tu código a <b>PDF</b> o <b>imagen</b>, un fragmento como imagen bonita, o extrae el código desde un PDF.</p></article>
+          <article class="func reveal"><span class="func__ico">🖼️</span><h3>Hazlo tuyo</h3><p>Varios temas y fondo propio con tu imagen o GIF favorito, con la opacidad que tú elijas.</p></article>
+          <article class="func reveal"><span class="func__ico">🔌</span><h3>Para tus proyectos</h3><p>Consola de red y monitor serial para cuando pasas del código a la electrónica.</p></article>
+        </div>
+
+        <ul class="mini-lista reveal">
+          <li>📝 Vista previa de Markdown</li>
+          <li>🗂️ Restaura tus pestañas al abrir</li>
+          <li>🚀 Inicio rápido</li>
+          <li>💾 Abre carpetas completas</li>
+          <li>🔎 Buscar, ir a línea, comentar</li>
+          <li>📖 Guía de comandos integrada</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================ CAPTURAS -->
+    <section class="seccion seccion--oscura" id="capturas">
+      <div class="wrap">
+        <header class="seccion__cab">
+          <p class="etiqueta">Míralo por dentro</p>
+          <h2>Así se ve vsMOON</h2>
+        </header>
+
+        <div class="galeria">
+          <figure class="captura captura--grande reveal">
+            <div class="ventana"><div class="ventana__barra"><i></i><i></i><i></i><span>vsMOON</span></div>
+              <!-- CAPTURA 1 -->
+              <img src="img/capturas/editor-principal.png" alt="Editor principal de vsMOON"
+                   data-pose="Captura del editor principal con código abierto, el explorador a la izquierda y Mr. Pixel abajo a la derecha. (1600×900)">
+            </div>
+            <figcaption>El editor principal, con Mr. Pixel abajo a la derecha.</figcaption>
+          </figure>
+          <figure class="captura reveal">
+            <div class="ventana"><div class="ventana__barra"><i></i><i></i><i></i><span>Problemas</span></div>
+              <!-- CAPTURA 2 -->
+              <img src="img/capturas/errores-espanol.png" alt="Errores explicados en español"
+                   data-pose="Captura de la tarjeta de errores / Problemas con un error explicado en español y la corrección automática. (1000×700)">
+            </div>
+            <figcaption>Errores explicados en español.</figcaption>
+          </figure>
+          <figure class="captura reveal">
+            <div class="ventana"><div class="ventana__barra"><i></i><i></i><i></i><span>Vista previa</span></div>
+              <!-- CAPTURA 3 -->
+              <img src="img/capturas/vista-previa.png" alt="Vista previa en vivo"
+                   data-pose="Captura de la vista previa en vivo (Pixel Server Preview) junto al código HTML. (1000×700)">
+            </div>
+            <figcaption>Vista previa en vivo.</figcaption>
+          </figure>
+          <figure class="captura reveal">
+            <div class="ventana"><div class="ventana__barra"><i></i><i></i><i></i><span>Estudio</span></div>
+              <img src="img/capturas/estudio-listo.png" alt="Ventana de estudio con el pomodoro listo"
+                   data-pose="Captura de la ventana de estudio con el pomodoro en reposo.">
+            </div>
+            <figcaption>Tu panel de estudio, listo para empezar.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ INSTALACION -->
+    <section class="seccion" id="instalacion">
+      <div class="wrap">
+        <header class="seccion__cab">
+          <p class="etiqueta etiqueta--verde">Windows</p>
+          <h2>Instálalo en 7 pasos</h2>
+          <p class="seccion__sub">Sin complicaciones. Sigue los pasos con las imágenes.</p>
+        </header>
+
+        <div class="pasos" id="pasos">
+          <ol class="pasos__lista" id="pasosLista">
+            <!-- el JS la llena con los títulos -->
+          </ol>
+
+          <div class="pasos__escena">
+            <!-- ============ PASO 1 ============ -->
+            <article class="paso" data-titulo="Descomprime ZIP o abre EXE">
+              <figure class="slot slot--paso"><img src="img/instalacion/paso-1.svg" alt="Ejemplo de un archivo ZIP de vsMOON y la opción para extraerlo" data-pose="Ilustración del archivo ZIP de vsMOON y la opción Extraer todo."></figure>
+              <h3><span class="num">1</span> Descomprime el ZIP o abre el EXE</h3>
+              <p>Si descargaste un ZIP, haz clic derecho y selecciona <b>Extraer todo</b>. Si descargaste el instalador EXE, ábrelo directamente. Después, abre la carpeta extraída si aplica.</p>
+            </article>
+            <!-- ============ PASO 2 ============ -->
+            <article class="paso" data-titulo="Selecciona la carpeta de destino">
+              <figure class="slot slot--paso"><img src="img/instalacion/paso-2.png" alt="Asistente de instalación: selección de la carpeta de destino" data-pose="Captura del paso 2: selección de la carpeta de destino de vsMOON. (1280×720)"></figure>
+              <h3><span class="num">2</span> Selecciona la carpeta de destino</h3>
+              <p>Deja la carpeta de destino predeterminada o pulsa <b>Examinar</b> para elegir otra. Cuando estés listo, pulsa <b>Siguiente</b>.</p>
+            </article>
+            <!-- ============ PASO 3 ============ -->
+            <article class="paso" data-titulo="Elige la carpeta del menú Inicio">
+              <figure class="slot slot--paso"><img src="img/instalacion/paso-3.png" alt="Asistente de instalación: selección de la carpeta del menú Inicio" data-pose="Captura del paso 3: selección de la carpeta del menú Inicio para los accesos directos. (1280×720)"></figure>
+              <h3><span class="num">3</span> Selecciona la carpeta del menú Inicio</h3>
+              <p>Puedes dejar <b>vsMOON</b> como nombre de la carpeta de accesos directos. Pulsa <b>Siguiente</b> para continuar.</p>
+            </article>
+            <!-- ============ PASO 4 ============ -->
+            <article class="paso" data-titulo="Crea el acceso directo">
+              <figure class="slot slot--paso"><img src="img/instalacion/paso-4.png" alt="Asistente de instalación: opción para crear un acceso directo en el escritorio" data-pose="Captura del paso 4: opción para crear un acceso directo en el escritorio. (1280×720)"></figure>
+              <h3><span class="num">4</span> Crea el acceso directo</h3>
+              <p>Marca <b>Crear un acceso directo en el escritorio</b> si quieres tenerlo a mano. Después, pulsa <b>Siguiente</b>.</p>
+            </article>
+            <!-- ============ PASO 5 ============ -->
+            <article class="paso" data-titulo="Instala vsMOON">
+              <figure class="slot slot--paso"><img src="img/instalacion/paso-5.png" alt="Asistente de instalación: resumen antes de instalar vsMOON" data-pose="Captura del paso 5: resumen de la configuración antes de instalar. (1280×720)"></figure>
+              <h3><span class="num">5</span> Listo para instalar</h3>
+              <p>Revisa las opciones elegidas y pulsa <b>Instalar</b> para comenzar.</p>
+            </article>
+            <!-- ============ PASO 6 ============ -->
+            <article class="paso" data-titulo="Espera a que termine">
+              <figure class="slot slot--paso"><img src="img/instalacion/paso-6.png" alt="Asistente de instalación: progreso de instalación de vsMOON" data-pose="Captura del paso 6: progreso de instalación de vsMOON. (1280×720)"></figure>
+              <h3><span class="num">6</span> Espera a que termine</h3>
+              <p>El asistente copiará los archivos necesarios. Espera a que finalice; no cierres la ventana durante el proceso.</p>
+            </article>
+            <!-- ============ PASO 7 ============ -->
+            <article class="paso" data-titulo="Finaliza y disfruta vsMOON">
+              <figure class="slot slot--paso"><img src="img/instalacion/paso-7.png" alt="Asistente de instalación: vsMOON instalado y listo para abrir" data-pose="Captura del paso 7: instalación finalizada, con la opción de ejecutar vsMOON y el botón Finalizar. (1280×720)"></figure>
+              <h3><span class="num">7</span> Finaliza y disfruta de vsMOON</h3>
+              <p>Pulsa <b>Finalizar</b> y abre vsMOON desde el acceso directo o el menú Inicio. ¡A disfrutar!</p>
+            </article>
+
+            <div class="pasos__ctrl">
+              <button class="btn btn--mini btn--fantasma" id="pasoPrev" type="button">← Anterior</button>
+              <span class="pasos__cont" id="pasoCont">1 / 7</span>
+              <button class="btn btn--mini" id="pasoNext" type="button">Siguiente →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Linux -->
+        <div class="linux reveal">
+          <!-- IMAGEN 7 -->
+          <figure class="slot slot--mini">
+            <img src="img/mrpixel/linux.png" alt="Mr. Pixel durmiendo con un pingüino"
+                 data-pose="Mr. Pixel dormido o bostezando abrazando un pingüino de pixeles (Linux), con “zZz” flotando. Transmite “ya casi, estoy preparándolo”. (400×400, fondo transparente)">
+          </figure>
+          <div>
+            <h3>🐧 ¿Y Linux?</h3>
+            <p>Estoy trabajando en la versión para Linux. <b>Próximamente.</b></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ CTA FINAL -->
+    <section class="cta">
+      <div class="wrap cta__grid">
+        <!-- IMAGEN 8 -->
+        <figure class="slot slot--cta">
+          <img src="img/mrpixel/descarga.png" alt="Mr. Pixel señalando la descarga"
+               data-pose="Mr. Pixel señalando hacia abajo (hacia el botón de descarga) con una mano y con la otra en la cadera, sonriendo con confianza. (500×500, fondo transparente)">
+        </figure>
+        <div>
+          <h2>¿Listo para estudiar con Mr. Pixel?</h2>
+          <p>Descarga vsMOON <span data-version>1.9.1</span> <span data-canal>beta educativa</span> y empieza tu racha hoy.</p>
+          <a class="btn btn--grande" href="downloads/vsMOON-1.9.1-beta.exe" data-descarga-windows download>
+            <span class="btn__icono">⬇</span>
+            <span class="btn__txt"><b>Descargar para Windows</b><small>Linux: próximamente</small></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ DESARROLLADOR -->
+    <section class="seccion" id="dev">
+      <div class="wrap">
+        <header class="seccion__cab">
+          <p class="etiqueta">Detrás de VsMoon</p>
+          <h2>El desarrollador</h2>
+        </header>
+
+        <div class="dev reveal">
+          <div class="dev__foto">
+            <!-- IMAGEN 9 · tu foto o tu avatar -->
+            <figure class="slot slot--avatar">
+              <img src="img/dev/avatar.png" alt="Foto del desarrollador"
+                   data-pose="Tu foto o tu avatar (cuadrada, 500×500). También puede ser una ilustración de ti junto a Mr. Pixel.">
+            </figure>
+            <!-- IMAGEN 10 · Mr. Pixel acompañándote -->
+            <figure class="slot slot--dev-pixel">
+              <img src="img/mrpixel/dev-companero.png" alt="Mr. Pixel junto al desarrollador"
+                   data-pose="Mr. Pixel pequeño, de lado, señalándote con una mano como diciendo “él me creó”. (300×300, fondo transparente)">
+            </figure>
+          </div>
+          <div class="dev__texto">
+            <p class="chip">Estudiante · Desarrollador</p>
+            <h3 data-dev-nombre>Tu nombre aquí</h3>
+            <p data-dev-bio>Cuéntales quién eres: tu carrera, por qué creaste vsMOON y qué problema de estudiante querías resolver. Dos o tres frases bastan.</p>
+            <blockquote>“Más que un entorno de desarrollo, el universo donde tus ideas de código alcanzan la órbita.”</blockquote>
+            <div class="dev__roles">
+              <h4>Roles que cumplo</h4>
+              <ul>
+                <li>Desarrollador</li>
+                <li>Creador de ideas</li>
+                <li>Programador</li>
+                <li>Diseñador</li>
+                <li>Tester</li>
+              </ul>
+            </div>
+            <p class="dev__nota"><i></i></p>
+            <div class="dev__links">
+              <a class="btn btn--mini btn--fantasma" href="#" data-enlace="github" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn btn--mini btn--fantasma" href="#" data-enlace="correo">Correo</a>
+              <a class="btn btn--mini btn--fantasma" href="#" data-enlace="redes" target="_blank" rel="noopener">Redes</a>
+              <a class="btn btn--mini" href="#" data-enlace="ideas" target="_blank" rel="noopener">💡 Enviar ideas o reportar un bug</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================ GAFETE COLGADO -->
+  <aside class="gafete" id="gafete" aria-label="Gafete de Mr. Pixel y del desarrollador. Haz clic para darle la vuelta">
+    <canvas class="gafete__cuerda" id="gafeteCuerda" aria-hidden="true"></canvas>
+    <div class="gafete__tarjeta" id="gafeteTarjeta" role="button" tabindex="0" aria-label="Gafete de Mr. Pixel y del desarrollador. Pulsa Enter para girarlo.">
+      <div class="gafete__giro" id="gafeteGiro">
+
+        <!-- CARA 1 · Mr. Pixel -->
+        <div class="cara cara--frente">
+          <span class="cara__clip"></span>
+          <div class="cara__cab"><b>vsMOON</b><i>BETA</i></div>
+          <figure class="cara__foto slot">
+            <!-- IMAGEN 12 · busto de Mr. Pixel para el gafete (si no existe, usa hero-saludando.png) -->
+            <img src="img/mrpixel/miniyo.png" data-respaldo="img/mrpixel/hero-saludando.png" alt="Mr. Pixel"
+                 data-pose="Busto de Mr. Pixel (cara y hombros) mirando al frente, sonriendo. Cuadrada 300×300, fondo transparente.">
+          </figure>
+          <div class="cara__datos"><strong>MR. PIXEL</strong><span>Compañero de estudio</span></div>
+          <div class="cara__pie"><small>v<span data-version>1.9.1</span> · educativa</small><span class="codigo"></span></div>
+        </div>
+
+        <!-- CARA 2 · desarrollador -->
+        <div class="cara cara--dorso">
+          <span class="cara__clip"></span>
+          <div class="cara__cab"><b>vsMOON</b><i>DEV</i></div>
+          <figure class="cara__foto slot">
+            <img src="img/mrpixel/miniavatar.png" alt="Avatar del desarrollador"
+                 data-pose="Tu avatar o tu foto (cuadrada, 500×500). Es la misma imagen de la sección del desarrollador.">
+          </figure>
+          <div class="cara__datos"><strong data-dev-nombre>Jhos</strong><span>Desarrollador</span></div>
+          <div class="cara__pie"><small>Elevando tu código al siguiente nivel.</small><span class="codigo"></span></div>
+        </div>
+
+      </div>
+      <span class="gafete__pista" id="gafetePista">Arrástrame o haz clic ✋</span>
+    </div>
+  </aside>
+
+  <!-- ============================================================ FOOTER -->
+  <footer class="pie">
+    <div class="wrap pie__grid">
+      <div>
+        <p class="logo__txt">vs<b>MOON</b></p>
+        <p class="pie__peq">Versión <span data-version>1.9.1</span> · <span data-canal>beta educativa</span></p>
+        <p class="pie__peq">Tu entorno, tu universo, tu código.</p>
+      </div>
+      <!-- IMAGEN 11 -->
+      <figure class="slot slot--pie">
+        <img src="img/mrpixel/despedida.png" alt="Mr. Pixel despidiéndose"
+             data-pose="Mr. Pixel asomándose desde el borde inferior, despidiéndose con la mano. Solo cabeza y brazo. (300×200, fondo transparente)">
+      </figure>
+      <div class="pie__links">
+        <a href="#descargar">Descargar</a>
+        <a href="#instalacion">Instalación</a>
+        <a href="#dev">Desarrollador</a>
+      </div>
+    </div>
+    <p class="pie__copy">© <span id="anio"></span> vsMOON · Hecho con  muchos pixeles.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/gafete.js"></script>
+</body>
+</html>
