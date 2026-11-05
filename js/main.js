@@ -44,7 +44,7 @@ function aplicarConfig() {
   $$("[data-version]").forEach(e => (e.textContent = CONFIG.version));
   $$("[data-canal]").forEach(e => (e.textContent = CONFIG.canal));
   $$("[data-descarga-windows]").forEach(a => a.setAttribute("href", CONFIG.descargaWindows));
-  $("#anio").textContent = new Date().getFullYear();
+  const anio = $("#anio"); if (anio) anio.textContent = new Date().getFullYear();
 
   const d = CONFIG.dev;
   const nombre = $("[data-dev-nombre]"); if (nombre) nombre.textContent = d.nombre;
@@ -87,6 +87,7 @@ function vigilarImagenes() {
 /* ---------- menú móvil ---------- */
 function menuMovil() {
   const btn = $("#navToggle"), links = $("#navLinks");
+  if (!btn || !links) return;
   btn.addEventListener("click", () => {
     const abierto = links.classList.toggle("abierto");
     btn.setAttribute("aria-expanded", abierto);
@@ -97,11 +98,14 @@ function menuMovil() {
 /* ---------- globo de Mr. Pixel ---------- */
 function globoPixel() {
   const globo = $("#globoPixel"), texto = $("#globoTexto");
+  if (!globo || !texto) return;
+  // otras páginas pueden poner sus propias frases en window.FRASES_PIXEL_PAGINA
+  const FRASES = window.FRASES_PIXEL_PAGINA || FRASES_PIXEL;
   let i = 0;
   const siguiente = () => {
-    i = (i + 1) % FRASES_PIXEL.length;
+    i = (i + 1) % FRASES.length;
     globo.classList.add("cambia");
-    setTimeout(() => { texto.textContent = FRASES_PIXEL[i]; globo.classList.remove("cambia"); }, 250);
+    setTimeout(() => { texto.textContent = FRASES[i]; globo.classList.remove("cambia"); }, 250);
   };
   setInterval(siguiente, 4200);
   $(".hero__mascota").addEventListener("click", siguiente);
@@ -110,6 +114,7 @@ function globoPixel() {
 /* ---------- racha de demostración ---------- */
 function racha() {
   const dias = $$("#rachaDias .dia"), num = $("#rachaNum");
+  if (!dias.length || !num) return;
   const pintar = () => (num.textContent = dias.filter(d => d.classList.contains("on")).length);
   dias.forEach(d => d.addEventListener("click", () => { d.classList.toggle("on"); pintar(); }));
   // al verla por primera vez, se enciende sola con un efecto
@@ -125,6 +130,7 @@ function racha() {
 /* ---------- pasos de instalación ---------- */
 function pasos() {
   const items = $$(".paso"), lista = $("#pasosLista"), cont = $("#pasoCont");
+  if (!lista || !items.length) return;
   const prev = $("#pasoPrev"), next = $("#pasoNext");
   let actual = 0;
 
@@ -191,5 +197,6 @@ document.addEventListener("DOMContentLoaded", () => {
   racha();
   pasos();
   reveal();
-  $("#btnLinux").addEventListener("click", () => aviso("🐧 Linux: próximamente"));
+  const btnLinux = $("#btnLinux");
+  if (btnLinux) btnLinux.addEventListener("click", () => aviso("🐧 Linux: próximamente"));
 });
