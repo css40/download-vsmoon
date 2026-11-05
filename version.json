@@ -1,5 +1,5 @@
 {
-  "latestVersion": "1.9.1",
-  "releaseNotes": "- Compilación de proyectos Java grandes\n- Pixel Server carga bien el CSS",
-  "downloadUrl": "https://github.com/css40/download-vsmoon/releases/latest"
+  "latestVersion": "1.9.2",
+  "releaseNotes": "- Mejoras de diseño\n- Nuevo botón para actualizar\n- Corrección de errores\n- Mejoras en HTML y CSS",
+  "downloadUrl": "https://github.com/css40/download-vsmoon/releases/download/V1.9.2/Vsmoon-V1.9.2.zip"
 }
