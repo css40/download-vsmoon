@@ -6,8 +6,8 @@ const CONFIG = {
   version: "1.9.1",
   canal: "beta educativa",
 
-  // Ruta (o URL) del instalador de Windows. Pon el archivo en la carpeta /downloads
-  descargaWindows: "downloads/vsMOON-1.9.1-beta.exe",
+  // URL del ZIP de la versión beta educativa.
+  descargaWindows: "https://github.com/css40/download-vsmoon/releases/download/v1.9.1/Vsmoon.zip",
 
   // Tus datos (déjalos vacíos "" para ocultar el botón)
   dev: {
