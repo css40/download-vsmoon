@@ -7,7 +7,7 @@ const CONFIG = {
   canal: "beta educativa",
 
   // URL del ZIP de la versión beta educativa.
-  descargaWindows: "https://github.com/css40/download-vsmoon/releases/tag/V1.9.2",
+  descargaWindows: "https://github.com/css40/download-vsmoon/releases/download/V1.9.2/Vsmoon-V1.9.2.zip",
 
   // Tus datos (déjalos vacíos "" para ocultar el botón)
   dev: {
