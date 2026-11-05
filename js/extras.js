@@ -7,8 +7,8 @@ const EXTRAS = {
   // Si dejas un valor vacío "", esa casilla se oculta.
   requisitos: {
     sistema: "Windows 10 u 11",
-    tamano: "00 MB",       // ← pon aquí lo que pesa tu instalador, ej: "48 MB"
-    espacio: "00 MB"       // ← y el espacio que ocupa ya instalado, ej: "120 MB"
+    tamano: "89,6 MB",       // ← pon aquí lo que pesa tu instalador, ej: "48 MB"
+    espacio: "212,3 MB"       // ← y el espacio que ocupa ya instalado, ej: "120 MB"
   },
 
   // Fecha de lanzamiento de esta versión (se muestra bajo "Registro de cambios"). Vacío = no se muestra.
